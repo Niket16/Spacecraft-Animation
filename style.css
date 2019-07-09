@@ -1,0 +1,187 @@
+body{
+    height:100vh;
+    width:100vw;
+        background-image: url(http://www.14denoviembre.es/img/hori.png), url(http://www.14denoviembre.es/img/stars_5.png);
+        background-repeat: repeat-x,repeat-x repeat-y;
+}
+.con{
+    z-index:-2;
+    overflow:hidden;
+
+
+    height:100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.rocket-container{
+    z-index:1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.rocket{
+    background-color: #B0C5E3;
+    height: 170px;
+    width: 80px;
+    animation: rocketfly 5s ease-in-out infinite;
+}
+.rocket:before{
+    content:'';
+    position:absolute;
+    top:40%;
+    right:100%;
+    border-bottom: 100px solid #61A0D5;
+    border-left: 60px solid transparent;
+ 
+}
+.rocket:after{
+    content:'';
+    position:absolute;
+    top:40%;
+    left:100%;
+    border-bottom: 100px solid #61A0D5;
+    border-right: 60px solid transparent;
+}
+.head{
+    position:relative;
+    top: -23%;
+    height:40px;
+    width:80px;
+    border-radius: 90px 90px 0 0;
+    background: #4781E4;
+}
+.window{
+    position:relative;
+    top: 0;
+    left: 15%;
+    background-color: skyblue;
+    border: 5px solid #1B2851;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.booster{
+    height:20px;
+    width:80px;
+    position:absolute;
+    top:100%;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom: 20px solid #4781E4;
+    box-sizing: border-box;
+}
+.flames{
+    background-color: yellow;
+    position:absolute;
+    top:125%;
+    left: 15%;
+    height:50px;
+    width:50px;
+    border-radius: 0 50% 50% 50%;
+    transform:rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+    animation: flames 2s linear infinite;
+    box-sizing: border-box;
+}
+.stars{
+    z-index: -1;
+    background-color:#fff;
+    position:absolute;
+    top:-5%;
+    height: 5px;
+    width: 5px;
+    animation: stars 2s linear infinite;
+}
+.stars:nth-child(2){
+  left:25%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3){
+  height:15px;
+  width:15px;
+  left:42%;
+  animation-delay: 1.7s;
+}
+.stars:nth-child(4){
+  left:66%;
+  animation-delay: 6.5s;
+}
+.stars:nth-child(5){
+  left:59%;
+  animation-delay: 2.6s;
+}
+.stars:nth-child(6){
+  top:-5%;
+  left:74%;
+  animation-delay: 4.9s;
+}
+.stars:nth-child(7){
+  height:15px;
+  width:15px;
+  top:10%;
+  left:105%;
+  animation-delay: 4s;
+}
+.stars:nth-child(8){
+  top:45%;
+  left:150%;
+  animation-delay: 2.8s;
+}
+.stars:nth-child(9){
+  top:20%;
+  left:131%;
+  animation-delay: 1.9s;
+}
+.stars:nth-child(10){
+  top:50%;
+  left:145%;
+  animation-delay: 5.8s;
+}
+@keyframes stars{
+  0%{
+    transform:translate(200px,-200px) rotate(0deg);
+  }
+  100%{
+    transform:translate(-1000px,1000px) rotate(270deg);
+  }
+}
+
+
+@keyframes flames{
+  0%{
+    transform:scale(0.8) rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+  }
+  20%{
+    transform: scale(1) rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+  }
+  50%{
+    transform: scale(0.6) rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+  }
+  70%{
+    transform:scale(1) rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+  }
+  100%{
+    transform:scale(0.8) rotate(45deg) skew(8deg, 8deg) rotate(180deg);
+  }
+}
+@keyframes rocketfly{
+  0%,100%{
+    transform: translateX(-10px);
+  }
+  20%,25%{
+     transform: translateX(10px);
+  }
+  40%,45%{
+    transform: translate(5px);
+  }
+  60%,65%{
+    transform: translate(15px);
+  }
+  80%,85%{
+    transform: translate(10px);
+  }
+}
